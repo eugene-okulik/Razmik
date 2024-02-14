@@ -48,7 +48,7 @@ class ClassBooks(Books):
         self.school_class = school_class
 
 
-class_book_first = ClassBooks("Алгебра", "Иванов", 200, False, "бумага",  "Математика", 9)
+class_book_first = ClassBooks("Алгебра", "Иванов", 200, False, "бумага", "Математика", 9)
 class_book_second = ClassBooks("Алгебра", "Иванов", 200, False, "бумага", "Математика", 9)
 class_book_third = ClassBooks("Алгебра", "Иванов", 200, True, "бумага", "Математика", 9)
 
