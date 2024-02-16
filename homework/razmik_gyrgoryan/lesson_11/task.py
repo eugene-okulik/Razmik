@@ -31,6 +31,12 @@ class ClassBooks(Books):
         self.subject = subject
         self.school_class = school_class
 
+    def print_books(self):
+        print(f'Название: {self.name_book}, Автор: {self.author}, страниц: {self.pages}, '
+              f'предмет: {self.subject}, класс: {self.school_class}, зарезервирована' if self.flag else
+              f'Название: {self.name_book}, Автор: {self.author}, '
+              f'страниц: {self.pages}, предмет: {self.subject}, класс: {self.school_class}')
+
 
 class_book_first = ClassBooks("Алгебра", "Иванов", 200, False, 123123, "бумага", "Математика", 9)
 class_book_second = ClassBooks("Алгебра", "Иванов", 200, False, 464646, "бумага", "Математика", 9)
