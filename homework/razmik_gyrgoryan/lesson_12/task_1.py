@@ -28,12 +28,12 @@ class Flowers:
 
 
 class Roses(Flowers):
-    def __init__(self):
+    def __init__(self, svejest, color, len_steble, price, life_time):
         super().__init__(svejest, color, len_steble, price, life_time)
 
 
 class Tulip(Flowers):
-    def __init__(self):
+    def __init__(self, svejest, color, len_steble, price, life_time):
         super().__init__(svejest, color, len_steble, price, life_time)
 
 
@@ -50,7 +50,3 @@ class Bouquet:
 
     def find_flower(self):
         return self if self.svejest or self.color or self.len_steble or self.price or self.life_time else None
-
-
-rose = Roses()
-blue_flower = Tulip()
