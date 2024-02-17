@@ -48,8 +48,8 @@ class Bouquet:
         total_life_time = sum(f.avg_life_time for f in self.flowers)
         return total_life_time / len(self.flowers)
 
-    def find_flower(self, svejest, color, len_steble, price, life_time):
-        return self if svejest or color or len_steble or price or life_time else None
+    def find_flower(self):
+        return self if self.svejest or self.color or self.len_steble or self.price or self.life_time else None
 
 
 rose = Roses()
