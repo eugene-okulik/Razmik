@@ -38,7 +38,7 @@ class Tulip(Flowers):
 
 
 class Bouquet:
-    def __init__(self):
+    def __init__(self, flowers):
         self.flowers = flowers
 
     def __add__(self, obj):
