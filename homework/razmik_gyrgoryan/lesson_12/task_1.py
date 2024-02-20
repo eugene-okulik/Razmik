@@ -34,12 +34,12 @@ class Flowers:
 
 class Roses(Flowers):
     def __init__(self, svejest, color, len_steble, price, life_time):
-        super().__init__(svejest, "Rose", color, len_steble, price, life_time)
+        super().__init__("Rose", svejest, color, len_steble, price, life_time)
 
 
 class Tulip(Flowers):
     def __init__(self, svejest, color, len_steble, price, life_time):
-        super().__init__(svejest, "Tulip", color, len_steble, price, life_time)
+        super().__init__("Tulip", svejest, color, len_steble, price, life_time)
 
 
 class Bouquet:
@@ -54,19 +54,19 @@ class Bouquet:
         return total_life_time / len(self.flowers)
 
     def sort_svejest(self):
-        return sorted(self.flowers.svejest)
+        return sorted(self.flowers, key=lambda x: x.svejest)
 
     def sort_color(self):
-        return sorted(self.flowers.color)
+        return sorted(self.flowers.color, key=lambda x: x.color)
 
     def sort_len_steble(self):
-        return sorted(self.flowers.len_steble)
+        return sorted(self.flowers.len_steble, key=lambda x: x.len_steble)
 
     def sort_price(self):
-        return sorted(self.flowers.price)
+        return sorted(self.flowers.price, key=lambda x: x.price)
 
     def sort_life_time(self):
-        return sorted(self.flowers.life_time)
+        return sorted(self.flowers.life_time, key=lambda x: x.life_time)
 
     def find_flower(self, obj):
         for flower in self.flowers:
