@@ -1,0 +1,64 @@
+INSERT INTO students (name, second_name ) VALUES ('Razmik', 'Grygoryan')
+
+
+INSERT INTO books (title, taken_by_student_id) VALUES ('TEST1', 328)
+
+
+INSERT INTO books (title, taken_by_student_id) VALUES ('TEST2', 328)
+
+
+INSERT INTO `groups` VALUES (328, 'TEST', 'sep 1977', 'dec 1988')
+
+
+INSERT INTO subjets (title) VALUES ('TEST1')
+
+
+INSERT INTO subjets (title) VALUES ('TEST2')
+
+
+INSERT INTO lessons (title, subject_id) VALUES ('TEST111', 207)
+
+
+INSERT INTO lessons (title, subject_id) VALUES ('TEST222', 209)
+
+
+INSERT INTO marks (value, lesson_id, student_id) VALUES ('7', 388, 328)
+
+
+INSERT INTO marks (value, lesson_id, student_id) VALUES ('7', 389, 328)
+
+
+SELECT value FROM marks
+
+
+SELECT title from books where taken_by_student_id = 328
+
+
+SELECT
+    students.id AS student_id,
+    students.name AS student_name,
+    students.second_name AS student_second_name,
+    "groups".id AS group_id,
+    "groups".title AS group_title,
+    books.id AS book_id,
+    books.title AS book_title,
+    lessons.id AS lesson_id,
+    lessons.title AS lesson_title,
+    subjets.id AS subject_id,
+    subjets.title AS subject_title,
+    marks.id AS mark_id,
+    marks.value AS mark_value
+FROM students
+JOIN "groups" ON students.id = "groups".id
+LEFT JOIN books ON students.id = books.taken_by_student_id
+LEFT JOIN marks ON students.id = marks.student_id
+LEFT JOIN lessons ON marks.lesson_id = lessons.id
+LEFT JOIN subjets ON lessons.subject_id = subjets.id
+WHERE students.id = 328;
+
+
+
+
+
+
+
