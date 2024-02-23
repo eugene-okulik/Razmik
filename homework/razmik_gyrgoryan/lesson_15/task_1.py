@@ -15,17 +15,17 @@ cursor.execute(f"INSERT INTO books (title, taken_by_student_id) VALUES ('TEST1',
 cursor.execute(f"INSERT INTO books (title, taken_by_student_id) VALUES ('TEST2', {student_id})")
 cursor.execute(f"INSERT INTO `groups` VALUES ({student_id}, 'TEST', 'sep 1977', 'dec 1988')")
 cursor.execute(f"UPDATE students SET group_id = {student_id} WHERE id = 328'")
-cursor.execute(f"INSERT INTO subjets (title) VALUES ('TEST1')")
+cursor.execute("INSERT INTO subjets (title) VALUES ('TEST1')")
 first_subject_id = cursor.lastrowid
 cursor.execute(f"INSERT INTO lessons (title, subject_id) VALUES ('TEST111', {first_subject_id})")
 first_lesson_id = cursor.lastrowid
-cursor.execute(f"INSERT INTO subjets (title) VALUES ('TEST2')")
+cursor.execute("INSERT INTO subjets (title) VALUES ('TEST2')")
 second_subject_id = cursor.lastrowid
 cursor.execute(f"INSERT INTO lessons (title, subject_id) VALUES ('TEST222', {second_subject_id})")
 second_lesson_id = cursor.lastrowid
 cursor.execute(f"INSERT INTO marks (value, lesson_id, student_id) VALUES ('7', {first_lesson_id}, {student_id})")
 cursor.execute(f"INSERT INTO marks (value, lesson_id, student_id) VALUES ('7', {second_lesson_id}, {student_id})")
-cursor.execute(f"SELECT value FROM marks")
+cursor.execute("SELECT value FROM marks")
 cursor.execute(f"SELECT title from books where taken_by_student_id = {student_id}")
 cursor.execute(f'''SELECT
     students.id AS student_id,
