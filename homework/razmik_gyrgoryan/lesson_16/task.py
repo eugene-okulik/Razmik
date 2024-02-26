@@ -20,15 +20,15 @@ homework_path = os.path.dirname(os.path.dirname(base_path))
 file_path = os.path.join(homework_path, 'eugene_okulik', 'Lesson_16', 'hw_data', 'data.csv')
 
 cursor = db.cursor(dictionary=True)
-query = '''SELECT 
-    name, second_name, 
-    "groups".title AS group_title, 
-    books.title AS book_title, 
-    subjets.title AS subject_title, 
-    lessons.title AS lesson_title, 
+query = '''SELECT
+    name, second_name,
+    "groups".title AS group_title,
+    books.title AS book_title,
+    subjets.title AS subject_title,
+    lessons.title AS lesson_title,
     marks.value AS mark_value
-FROM students 
-JOIN "groups" ON students.id = "groups".id 
+FROM students
+JOIN "groups" ON students.id = "groups".id
 LEFT JOIN books ON students.id = books.taken_by_student_id
 LEFT JOIN marks ON students.id = marks.student_id
 LEFT JOIN lessons ON marks.lesson_id = lessons.id
