@@ -17,10 +17,10 @@ def get_data(file_or_directory):
         date = datetime.strptime(i[:23], date_format)
         if date:
             print(date)
-        elif args.data > data:
-            print(args.data + data)
-        elif args.data < data:
-            print(data - args.data)
+        elif args.data > date:
+            print(args.data + date)
+        elif args.data < date:
+            print(date - args.data)
         elif args.data == "%Y-%m-%d %H:%M:%S.%f %Y-%m-%d %H:%M:%S.%f":
             print(args.data)
         else:
