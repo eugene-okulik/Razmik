@@ -14,8 +14,8 @@ def create_object():
     headers = {"content-type": "application/json"}
     res = requests.post("https://api.restful-api.dev/objects", json=body, headers=headers)
     assert res.status_code == 200, "Status code error"
-    assert response.json()['id'] == 7, 'Id is incorrect'
-    return response.json()['id']
+    assert res.json()['id'] == 7, 'Id is incorrect'
+    return res.json()['id']
 
 
 def clear(post_id):
@@ -52,5 +52,5 @@ def certain_update_object():
 
 
 def delete_object():
-    res = requests.delete(f"https://api.restful-api.dev/objects/6")
+    res = requests.delete("https://api.restful-api.dev/objects/6")
     return res.status_code, res.json()
