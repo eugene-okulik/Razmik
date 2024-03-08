@@ -94,3 +94,8 @@ def test_certain_update_object(create_object):
     headers = {"content-type": "application/json"}
     res = requests.patch(f"https://api.restful-api.dev/objects/{create_object}", json=body, headers=headers)
     assert res.json()['name'] == "Apple MacBook Pro 16 (Updated Name)"
+
+
+def test_delete_object():
+    res = requests.delete("https://api.restful-api.dev/objects/6")
+    assert res.status_code == 200
