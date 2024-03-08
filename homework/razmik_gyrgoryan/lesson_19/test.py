@@ -23,9 +23,7 @@ from fixtures import create_object, for_testing, some_func
             "Hard disk size": "512 GB"
         }
     },
-])
-def test_create_object(body, some_func, for_testing):
-    body = {
+    {
         "name": "Apple MacBook Pro 16",
         "data": {
             "year": 2019,
@@ -34,6 +32,8 @@ def test_create_object(body, some_func, for_testing):
             "Hard disk size": "1 TB"
         }
     }
+])
+def test_create_object(body, some_func, for_testing):
     headers = {"content-type": "application/json"}
     res = requests.post("https://api.restful-api.dev/objects", json=body, headers=headers)
     assert res.status_code == 200, "Status code error"
