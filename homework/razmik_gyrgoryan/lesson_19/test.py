@@ -96,6 +96,8 @@ def test_certain_update_object(create_object):
     assert res.json()['name'] == "Apple MacBook Pro 16 (Updated Name)"
 
 
-def test_delete_object():
-    res = requests.delete("https://api.restful-api.dev/objects/6")
-    assert res.status_code == 200
+def test_delete_object(create_object):
+    res_delete = requests.delete(f"https://api.restful-api.dev/objects/{create_object}")
+    res_get = requests.get(f"https://api.restful-api.dev/objects/{create_object}")
+    assert res_delete.status_code == 200
+    assert res_get.status_code == 404
