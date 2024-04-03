@@ -6,3 +6,4 @@ venv
 __pycache__
 credentials.py
 .env
+/homework/razmik_gyrgoryan/lesson_20/allure-results/
