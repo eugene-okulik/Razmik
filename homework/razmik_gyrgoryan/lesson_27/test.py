@@ -21,9 +21,11 @@ def test_tab(page: Page, context: BrowserContext):
     expect(button).to_be_enabled()
 
 
-def test_color(page: Page):
-    page.goto('https://demoqa.com/dynamic-properties')
-    color = page.locator('#colorChange')
-    button_unvisible = page.locator('#visibleAfter')
+def test_visible_complete(page: Page):
+    page.goto('https://demo.seleniumeasy.com/jquery-download-progress-bar-demo.html')
+    button = page.locator('#downloadButton')
+    button.click()
+    button_unvisible = page.locator('#dialog > div.progress-label')
     expect(button_unvisible).to_be_visible()
-    color.click()
+    close = page.get_by_text('Close')
+    close.click()
