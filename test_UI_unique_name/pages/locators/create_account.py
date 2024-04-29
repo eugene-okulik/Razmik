@@ -1,0 +1,11 @@
+class CreateAccountLocators:
+    first_name = '#firstname'
+    second_name = '#lastname'
+    email = '#email_address'
+    passw = '#password'
+    passw_confirmed = '#password-confirmation'
+    create_account = '//button[@class="action submit primary"]'
+    success_text = '[class="message-success success message"]'
+    title_wrapper = '[data-ui-id="page-title-wrapper"]'
+    error_message = '[class="message-error error message"]'
+    email_error = '#email_address-error'
